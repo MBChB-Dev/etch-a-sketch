@@ -37,16 +37,10 @@ function startGame(gridSizeInput) {
 
     gridSquares.forEach(function(square) {
         square.addEventListener('mouseenter', hoverEffect);
-        // square.addEventListener('touchstart', hoverEffect);
+        square.addEventListener('touchstart', hoverEffect);
         square.addEventListener('touchmove', hoverEffect);
     })
 }
-
-// Prevent viewport scrolling on touchmove
-
-document.body.addEventListener('touchmove', function (event) {
-    event.preventDefault();
-}, { passive: false });
 
 // Add grid size button event listener
 
