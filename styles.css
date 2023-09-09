@@ -43,6 +43,26 @@ body {
     padding: 20px;
     font-weight: bold;
     margin-top: 10px;
+    display: block;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    text-align: center;
+}
+
+p {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    text-align: center;
 }
 
 
