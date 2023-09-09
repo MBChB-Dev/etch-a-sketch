@@ -42,7 +42,11 @@ function startGame(gridSizeInput) {
     })
 }
 
+// Prevent viewport scrolling on touchmove
 
+document.body.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+}, { passive: false });
 
 // Add grid size button event listener
 
