@@ -37,7 +37,7 @@ function startGame(gridSizeInput) {
 
     gridSquares.forEach(function(square) {
         square.addEventListener('mouseenter', hoverEffect);
-        square.addEventListener('touchstart', hoverEffect);
+        // square.addEventListener('touchstart', hoverEffect);
         square.addEventListener('touchmove', hoverEffect);
     })
 }
