@@ -20,7 +20,7 @@ function startGame(gridSizeInput) {
 
     for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement("div");
-        square.style.cssText = `border: 1px solid black; flex: 1 1 ${squareDimensions}%; background-color: white;`;
+        square.style.cssText = `border: none; flex: 1 1 ${squareDimensions}%; background-color: white;`;
         square.classList.add("grid-squares");
         fragment.appendChild(square);
     }
@@ -32,7 +32,7 @@ function startGame(gridSizeInput) {
     let gridSquares = document.querySelectorAll(".grid-squares");
 
     function hoverEffect() {
-        this.style.cssText = `border: 1px solid black; flex: 1 1 ${squareDimensions}%; background-color: black;`;
+        this.style.cssText = `border: none; flex: 1 1 ${squareDimensions}%; background-color: black;`;
     }
 
     gridSquares.forEach(function(square) {
@@ -48,8 +48,14 @@ function startGame(gridSizeInput) {
 const sizeButton = document.querySelector(".sizeButton");
 
 sizeButton.addEventListener("click", () => {
-    let gridSize = window.prompt("Enter the number of squares per side for the new grid:", 16);
-    startGame(gridSize);
+    let gridSize = window.prompt("Enter the number of squares per side for the new grid (maximum allowed is 100):", 16);
+    
+    if (isNaN(gridSize) || gridSize <= 0 || gridSize > 100) {
+        
+        alert("Please enter a valid number from 1 to 100");
+    } else {
+        startGame(gridSize);
+    }
 })
 
 //Start the game with default size
