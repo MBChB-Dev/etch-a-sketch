@@ -1,5 +1,10 @@
 function startGame(gridSizeInput) {
-    
+    //Erase the old grid
+
+    const gridContainer = document.querySelector(".grid-container");
+
+    gridContainer.textContent = '';
+
     // Create grid
 
     const grid = document.querySelector(".grid-container");
@@ -24,7 +29,7 @@ function startGame(gridSizeInput) {
     let gridSquares = document.querySelectorAll(".grid-squares");
 
     function hoverEffect() {
-        this.style.cssText = "border: 4px solid black; flex: 1 1 6.25%; background-color: black;";
+        this.style.cssText = `border: 4px solid black; flex: 1 1 ${squareDimensions}%; background-color: black;`;
     }
 
     gridSquares.forEach(function(square) {
