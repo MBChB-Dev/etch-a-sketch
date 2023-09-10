@@ -47,6 +47,7 @@ function startGame(gridSizeInput) {
 const sizeButton = document.querySelector(".sizeButton");
 
 sizeButton.addEventListener("click", () => {
+    
     let gridSize = window.prompt("Enter the number of squares per side for the new grid (maximum allowed is 100):", 16);
     
     if (isNaN(gridSize) || gridSize <= 0 || gridSize > 100) {
