@@ -37,13 +37,29 @@ body {
     flex-grow: 1;
 }
 
-.sizeButton {
+.button {
     text-transform: uppercase;
     background-color: white;
     padding: 20px;
     font-weight: bold;
     margin-top: 10px;
     display: block;
+    width: 345px;
+    white-space: normal;
+}
+
+.colourButton {
+    background: linear-gradient(to left, 
+    violet, indigo, blue, green, yellow, orange, red);
+    color: white;
+    text-shadow: 5px 5px 5px black;
+}
+
+.greyScaleButton {
+    background: linear-gradient(to left, 
+    grey, darkgrey, black);
+    color: white;
+    text-shadow: 5px 5px 5px black;
 }
 
 h1 {
