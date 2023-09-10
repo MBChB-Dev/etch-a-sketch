@@ -35,10 +35,24 @@ function startGame(gridSizeInput) {
         this.style.cssText = `border: none; flex: 1 1 ${squareDimensions}%; background-color: black;`;
     }
 
+    // Function to handle touchmove event
+    function touchMoveEffect(event) {
+
+        event.preventDefault(); // Prevent default touch event behavior
+
+        const touch = event.touches[0]; // Get the first touch (assuming one finger touch)
+
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        
+        if (element && element.classList.contains("grid-squares")) {
+            hoverEffect.call(element); // Apply the hover effect to the touched square
+    }
+  }
+
     gridSquares.forEach(function(square) {
         square.addEventListener('mouseenter', hoverEffect);
         square.addEventListener('touchstart', hoverEffect);
-        square.addEventListener('touchmove', hoverEffect);
+        square.addEventListener('touchmove', touchMoveEffect);
     })
 }
 
