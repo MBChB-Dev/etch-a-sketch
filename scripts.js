@@ -1,7 +1,26 @@
 //Function to play a new game
 
 function startGame(gridSizeInput) {
-    
+
+    let hoverEffectColour = 'black';
+
+    //Random colour function
+
+    function getRandomColour() {
+        let red = Math.round(Math.random() * 256);
+        let green = Math.round(Math.random() * 256);
+        let blue = Math.round(Math.random() * 256);
+        let randomColour = `rgb(${red}, ${green}, ${blue})`;
+        return randomColour;
+    }
+
+    //Set to random colour if button pressed
+
+    const colourButton = document.querySelector(".colourButton");
+
+    colourButton.addEventListener('click', () => {
+        hoverEffectColour = getRandomColour();
+    })
 
 
     //Erase the old grid
@@ -33,12 +52,12 @@ function startGame(gridSizeInput) {
 
 
 
-    // Add event listener for hover effect
+    //Create hover effect function
 
     let gridSquares = document.querySelectorAll(".grid-squares");
 
     function hoverEffect() {
-        this.style.cssText = `border: none; flex: 1 1 ${squareDimensions}%; background-color: black;`;
+        this.style.cssText = `border: none; flex: 1 1 ${squareDimensions}%; background-color: ${hoverEffectColour};`;
     }
 
 
@@ -84,6 +103,4 @@ sizeButton.addEventListener("click", () => {
 //Start the game with default size
 
 startGame(16);
-
-
 
