@@ -2,11 +2,15 @@
 
 function startGame(gridSizeInput) {
     
+
+
     //Erase the old grid
 
     const gridContainer = document.querySelector(".grid-container");
 
     gridContainer.textContent = '';
+
+
 
     // Create grid
 
@@ -27,6 +31,8 @@ function startGame(gridSizeInput) {
 
     grid.appendChild(fragment);
 
+
+
     // Add event listener for hover effect
 
     let gridSquares = document.querySelectorAll(".grid-squares");
@@ -34,6 +40,7 @@ function startGame(gridSizeInput) {
     function hoverEffect() {
         this.style.cssText = `border: none; flex: 1 1 ${squareDimensions}%; background-color: black;`;
     }
+
 
     // Function to handle touchmove event
     function touchMoveEffect(event) {
@@ -56,6 +63,7 @@ function startGame(gridSizeInput) {
     })
 }
 
+
 // Add grid size button event listener
 
 const sizeButton = document.querySelector(".sizeButton");
@@ -71,6 +79,7 @@ sizeButton.addEventListener("click", () => {
         startGame(gridSize);
     }
 })
+
 
 //Start the game with default size
 
